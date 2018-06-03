@@ -24,8 +24,7 @@ public:										\
 #define	ImplementSingleton(ClassName)					\
 			ClassName* ClassName::m_pInstance = nullptr;
 
-#define GraphicDevice(DeviceClass)					\
-			DeviceClass::GetInstance()->GetDevice();
+#define GraphicDevice	C_Device::GetInstance()->GetDevice()
 
 #define Sprite(DeviceClass)					\
 			DeviceClass::GetInstance()->GetSprite();

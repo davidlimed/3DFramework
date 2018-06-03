@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Main.h"
+#include "Define.h"
 #include "Device.h"
 
 
@@ -28,7 +29,6 @@ HRESULT C_Main::Init()
 VOID C_Main::Update()
 {
 
-
 	return;
 }
 
@@ -39,11 +39,19 @@ VOID C_Main::LastUpdate()
 
 VOID C_Main::Render()
 {
+	C_Device::GetInstance()->GetDeivce()->Clear(0, 0, 0, D3DCOLOR_ARGB(255, 0, 0, 255), 0, 0);
+	C_Device::GetInstance()->GetDeivce()->BeginScene();
+	
+
 	return;
 }
 
 VOID C_Main::LastRender()
 {
+
+	C_Device::GetInstance()->GetDeivce()->EndScene();
+	C_Device::GetInstance()->GetDeivce()->Present(0, 0, 0, 0);
+
 	return;
 }
 
