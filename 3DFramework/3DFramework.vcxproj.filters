@@ -5,35 +5,64 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\01.Client">
+      <UniqueIdentifier>{fdf36085-15a6-49c0-8eb2-3d77cfdd78d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Main">
+      <UniqueIdentifier>{ea6d4039-19a4-4fce-8d36-e5101ff8a476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.Default">
+      <UniqueIdentifier>{9d874b99-e655-4c91-b995-9d0993e8e243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Device">
+      <UniqueIdentifier>{30ff7727-590f-444f-9ed4-31fdb022668f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\97.Structs">
+      <UniqueIdentifier>{e55c46d8-9091-4309-9882-8f341e8e9cd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\98.Define">
+      <UniqueIdentifier>{499f2075-9c2f-48ef-993c-4dac80aa729a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="3DFramework.h">
+      <Filter>소스 파일\99.Default</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\99.Default</Filter>
     </ClInclude>
-    <ClInclude Include="3DFramework.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="stdafx.h">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일\99.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>소스 파일\02.Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>소스 파일\03.Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>소스 파일\98.Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>소스 파일\98.Define</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\99.Default</Filter>
     </ClCompile>
     <ClCompile Include="3DFramework.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\01.Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>소스 파일\03.Device</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
