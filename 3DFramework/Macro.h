@@ -32,3 +32,4 @@ public:										\
 
 #define Font(DeviceClass)					\
 			DeviceClass::GetInstance()->GetFont();
+

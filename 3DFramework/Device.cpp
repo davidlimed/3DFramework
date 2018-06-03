@@ -81,7 +81,10 @@ VOID C_Device::SetParameters(D3DPRESENT_PARAMETERS d3dpp)
 	d3dpp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;
 	d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 }
-
+VOID C_Device::SetFont(int nHeight, int nWidth, UINT uWeight)
+{
+	return VOID();
+}
 const LPDIRECT3DDEVICE9 C_Device::GetDeivce()
 {
 	return m_pDevice;

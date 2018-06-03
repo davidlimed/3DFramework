@@ -53,6 +53,12 @@
     <ClInclude Include="Define.h">
       <Filter>소스 파일\98.Define</Filter>
     </ClInclude>
+    <ClInclude Include="VertexInfo.h">
+      <Filter>소스 파일\97.Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Functor.h">
+      <Filter>소스 파일\98.Define</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -63,6 +69,9 @@
     </ClCompile>
     <ClCompile Include="Device.cpp">
       <Filter>소스 파일\03.Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
