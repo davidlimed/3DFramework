@@ -71,7 +71,7 @@
       <Filter>소스 파일\03.Device</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\02.Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,9 +3,7 @@
 #define DeclareSingleton(ClassName)			\
 private:									\
 	static ClassName* m_pInstance;			\
-	ClassName(){}							\
 public:										\
-	~ClassName(){}							\
 	static ClassName* GetInstance()			\
 	{										\
 	if(!m_pInstance)						\
