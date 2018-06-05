@@ -1,6 +1,13 @@
 #pragma once
 #include "stdafx.h"
 
+struct S_VertexXYZ
+{
+	float fX;
+	float fY;
+	float fZ;
+};
+
 struct S_VertexColor
 {
 	float fX;

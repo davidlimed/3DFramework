@@ -18,6 +18,7 @@ HRESULT C_Main::Awake()
 {
 	HRESULT hr = C_Device::GetInstance()->Init(g_hWnd);
 
+	//Create Device
 	if (FAILED(hr))
 	{
 		MessageBox(NULL, L"Device Init Fail", L"System Massge", MB_OK);
@@ -26,31 +27,23 @@ HRESULT C_Main::Awake()
 
 	S_VertexColor verColor[] =
 	{
-		{ 150.f, 50.f, 0.5f, 1.f, 0xffff0000 },
-		{ 250.f, 250.f, 0.5f, 1.f, 0xff00ff00 },
-		{ 50.f, 250.f, 0.5f, 1.f, 0xff0000ff }
+		{ 150.f, 50.f, 0.5f, 1.f, D3DXCOLOR(1.f, 1.f, 0.f, 1.f) },
+		{ 250.f, 250.f, 0.5f, 1.f, D3DXCOLOR(1.f, 0.f, 0.f, 1.f) },
+		{ 50.f, 250.f, 0.5f, 1.f, D3DXCOLOR(1.f, 1.f, 1.f, 1.f) }
 
 	};
 
-	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
-		3 * sizeof(S_VertexColor),
-		NULL,
-		FVF_VER_RHW_COLOR,
-		D3DPOOL_DEFAULT,
-		&m_pVertexBuffer,
-		NULL)))
+	S_VertexXYZ verXYZ[] = 
 	{
-		return E_FAIL;
-	}
+		{200.f, 100.f, 0.5f},
+		{ 350.f, 200.f, 0.5f },
+		{ 50.f, 1200.f, 0.5f }
+	};
 
-	void * pVertices;
-
-	if (FAILED(m_pVertexBuffer->Lock(NULL, sizeof(verColor), &pVertices, NULL)))
-		return E_FAIL;
-
-	memcpy(pVertices, verColor, sizeof(verColor));
-
-	m_pVertexBuffer->Unlock();
+	C_Vertex * vt = new C_Vertex();
+	
+	vt->Init();
+	m_pVertexBuffer = vt->GetVB();
 
 	return S_OK;
 }
@@ -101,5 +94,6 @@ VOID C_Main::LastRender()
 
 VOID C_Main::Release()
 {
+	C_Device::GetInstance()->Release();
 	return;
 }

@@ -9,23 +9,26 @@ C_Vertex::C_Vertex():
 {
 }
 
-C_Vertex::~C_Vertex(){}
+C_Vertex::~C_Vertex()
+{
+	Release();
+}
 
 //정점버퍼 생성
 HRESULT C_Vertex::Init()
 {
 	S_VertexColor verColor[] = 
 	{
-		{ 150.f, 50.f, 0.5f, 0xffff0000},
-		{ 250.f, 250.f, 0.5f, 0xff00ff00 },
-		{ 50.f, 250.f, 0.5f, 0xff0000ff }
+		{ 150.f, 50.f, 0.5f, 1.f, 0xffff0000},
+		{ 250.f, 250.f, 0.5f, 1.f, 0xff00ff00 },
+		{ 50.f, 250.f, 0.5f, 1.f, 0xff0000ff }
 	
 	};
 
 	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
 		3 * sizeof(S_VertexColor), 
 		NULL,
-		FVF_VER_COLOR, 
+		FVF_VER_RHW_COLOR, 
 		D3DPOOL_DEFAULT, 
 		&m_pVB, 
 		NULL)))
@@ -53,7 +56,7 @@ HRESULT C_Vertex::Init(WORD VertexCount)
 	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
 		VertexCount * sizeof(S_VertexColor),
 		NULL,
-		FVF_VER_COLOR,
+		FVF_VER_RHW_COLOR,
 		D3DPOOL_DEFAULT,
 		&m_pVB,
 		NULL)))

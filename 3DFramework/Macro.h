@@ -32,8 +32,10 @@ public:										\
 
 //Device Macro
 #define GraphicDevice(DeviceClass) DeviceClass::GetInstance()->GetDevice()
-
 #define Sprite(DeviceClass)	DeviceClass::GetInstance()->GetSprite()
-
 #define Font(DeviceClass) DeviceClass::GetInstance()->GetFont()
 
+//ERR Macro
+#define Exception(pPointer, Message) \
+			if(!pPointer) \
+			{	MessageBox(NULL, Message, L"System Err", MB_OK); return; }

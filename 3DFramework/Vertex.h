@@ -6,6 +6,10 @@
 class C_Vertex
 {
 CreateBen(C_Vertex)
+
+private:
+	enum E_VERTEX_ID {eDefault};
+
 private:
 	LPDIRECT3DVERTEXBUFFER9 m_pVB;
 
