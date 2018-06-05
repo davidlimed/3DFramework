@@ -1,0 +1,8 @@
+#pragma once
+#include "stdafx.h"
+
+#define FVF_VER_COLOR (D3DFVF_XYZ | D3DFVF_DIFFUSE)
+
+#define FVF_VER_RHW_COLOR (D3DFVF_XYZRHW | D3DFVF_DIFFUSE)
+
+#define FVF_VER_TEX (D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1)

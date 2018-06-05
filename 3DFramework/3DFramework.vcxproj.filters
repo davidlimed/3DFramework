@@ -1,77 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\01.Client">
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\01.Client">
       <UniqueIdentifier>{fdf36085-15a6-49c0-8eb2-3d77cfdd78d5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\02.Main">
+    <Filter Include="Source\02.Main">
       <UniqueIdentifier>{ea6d4039-19a4-4fce-8d36-e5101ff8a476}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\99.Default">
+    <Filter Include="Source\99.Default">
       <UniqueIdentifier>{9d874b99-e655-4c91-b995-9d0993e8e243}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\03.Device">
+    <Filter Include="Source\03.Device">
       <UniqueIdentifier>{30ff7727-590f-444f-9ed4-31fdb022668f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\97.Structs">
+    <Filter Include="Source\97.Structs">
       <UniqueIdentifier>{e55c46d8-9091-4309-9882-8f341e8e9cd0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\98.Define">
+    <Filter Include="Source\98.Define">
       <UniqueIdentifier>{499f2075-9c2f-48ef-993c-4dac80aa729a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\04.Managers">
+      <UniqueIdentifier>{7897c0c7-818f-4b5f-be7c-8a8d81de095e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Super">
+      <UniqueIdentifier>{798a282c-271c-422b-81e2-3fa0db1185e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\04.Managers\01.GameObjMgr">
+      <UniqueIdentifier>{8cae73c8-fee7-4bc2-9824-99b80b639c49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\04.Managers\99.ResourceMgr">
+      <UniqueIdentifier>{3c6f15b5-8e8b-4b7d-aaa3-952a57461f63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Super\01.Object">
+      <UniqueIdentifier>{bf761ee0-0136-40b1-aae5-fd2ecc6f2cba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Super\99.Resource">
+      <UniqueIdentifier>{d6a681ae-0547-459b-941b-31c5bcf22cad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\04.Managers\98.TimeMgr">
+      <UniqueIdentifier>{1396781a-3703-421e-ad10-964e22b3ca90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\04.Managers\97.CollisionMgr">
+      <UniqueIdentifier>{ac17c692-bc08-4a49-9d9c-b0382f5e4af7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3DFramework.h">
-      <Filter>소스 파일\99.Default</Filter>
+      <Filter>Source\99.Default</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>소스 파일\99.Default</Filter>
+      <Filter>Source\99.Default</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>소스 파일\99.Default</Filter>
+      <Filter>Source\99.Default</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>소스 파일\99.Default</Filter>
+      <Filter>Source\99.Default</Filter>
     </ClInclude>
     <ClInclude Include="Main.h">
-      <Filter>소스 파일\02.Main</Filter>
+      <Filter>Source\02.Main</Filter>
     </ClInclude>
     <ClInclude Include="Device.h">
-      <Filter>소스 파일\03.Device</Filter>
+      <Filter>Source\03.Device</Filter>
     </ClInclude>
     <ClInclude Include="Macro.h">
-      <Filter>소스 파일\98.Define</Filter>
+      <Filter>Source\98.Define</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
-      <Filter>소스 파일\98.Define</Filter>
+      <Filter>Source\98.Define</Filter>
     </ClInclude>
     <ClInclude Include="VertexInfo.h">
-      <Filter>소스 파일\97.Structs</Filter>
+      <Filter>Source\97.Structs</Filter>
     </ClInclude>
     <ClInclude Include="Functor.h">
-      <Filter>소스 파일\98.Define</Filter>
+      <Filter>Source\98.Define</Filter>
+    </ClInclude>
+    <ClInclude Include="FlagDefine.h">
+      <Filter>Source\98.Define</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>Source\04.Managers\99.ResourceMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectMgr.h">
+      <Filter>Source\04.Managers\01.GameObjMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Source\05.Super\01.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Source\05.Super\99.Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeMgr.h">
+      <Filter>Source\04.Managers\98.TimeMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>소스 파일\99.Default</Filter>
+      <Filter>Source\99.Default</Filter>
     </ClCompile>
     <ClCompile Include="3DFramework.cpp">
-      <Filter>소스 파일\01.Client</Filter>
+      <Filter>Source\01.Client</Filter>
     </ClCompile>
     <ClCompile Include="Device.cpp">
-      <Filter>소스 파일\03.Device</Filter>
+      <Filter>Source\03.Device</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>소스 파일\02.Main</Filter>
+      <Filter>Source\02.Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Source\05.Super\99.Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeMgr.cpp">
+      <Filter>Source\04.Managers\98.TimeMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

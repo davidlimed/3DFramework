@@ -22,7 +22,10 @@ public:
 	VOID	SetParameters(D3DPRESENT_PARAMETERS * d3dpp);
 	
 public:
-	const LPDIRECT3DDEVICE9	GetDeivce();
+	const LPDIRECT3DDEVICE9	GetDevice();
 	const LPD3DXSPRITE		GetSprite();
 	const LPD3DXFONT		GetFont();
+
+public:
+	void DestroyDevice();
 };

@@ -1,17 +1,19 @@
 #pragma once
 
 #include "stdafx.h"
+#include "Macro.h"
 
 class C_Main
 {
+CreateBen(C_Main)
+
+private:
+	LPDIRECT3DVERTEXBUFFER9 m_pVertexBuffer;
+
 public:
 	C_Main();
 	~C_Main();
-public:
-	C_Main(const C_Main&) = delete;
-	void operator=(const C_Main&) = delete;
 
-	
 public:
 	HRESULT Awake();
 	HRESULT Init();

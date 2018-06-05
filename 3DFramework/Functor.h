@@ -11,3 +11,4 @@ void SafeRelease(T * pInstance)
 	pInstance = nullptr;
 }
 
+

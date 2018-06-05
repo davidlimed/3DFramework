@@ -149,7 +149,7 @@ VOID C_Device::SetParameters(D3DPRESENT_PARAMETERS * d3dpp)
 	d3dpp->PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 }
 
-const LPDIRECT3DDEVICE9 C_Device::GetDeivce()
+const LPDIRECT3DDEVICE9 C_Device::GetDevice()
 {
 	return m_pDevice;
 }
@@ -162,4 +162,13 @@ const LPD3DXSPRITE C_Device::GetSprite()
 const LPD3DXFONT C_Device::GetFont()
 {
 	return m_pFont;
+}
+
+void C_Device::DestroyDevice()
+{
+	if (m_pDevice)
+		m_pDevice->Release();
+	
+	if (m_p3D)
+		m_p3D->Release();
 }
