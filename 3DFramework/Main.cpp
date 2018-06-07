@@ -6,9 +6,11 @@
 #include "Vertex.h"
 #include "VertexInfo.h"
 #include "FlagDefine.h"
+#include "MainCamera.h"
 
 C_Main::C_Main():
-	m_pVertexBuffer(nullptr)
+	m_pVertexBuffer(nullptr),
+	m_pCameraInstance(nullptr)
 {
 }
 
@@ -18,27 +20,17 @@ HRESULT C_Main::Awake()
 {
 	HRESULT hr = C_Device::GetInstance()->Init(g_hWnd);
 
+	GraphicDevice(C_Device)->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+	GraphicDevice(C_Device)->SetRenderState(D3DRS_LIGHTING, false);
+
+	CreateObject(m_pCameraInstance, C_MainCamera);
+
 	//Create Device
 	if (FAILED(hr))
 	{
 		MessageBox(NULL, L"Device Init Fail", L"System Massge", MB_OK);
 		return E_FAIL;
 	}
-
-	S_VertexColor verColor[] =
-	{
-		{ 150.f, 50.f, 0.5f, 1.f, D3DXCOLOR(1.f, 1.f, 0.f, 1.f) },
-		{ 250.f, 250.f, 0.5f, 1.f, D3DXCOLOR(1.f, 0.f, 0.f, 1.f) },
-		{ 50.f, 250.f, 0.5f, 1.f, D3DXCOLOR(1.f, 1.f, 1.f, 1.f) }
-
-	};
-
-	S_VertexXYZ verXYZ[] = 
-	{
-		{200.f, 100.f, 0.5f},
-		{ 350.f, 200.f, 0.5f },
-		{ 50.f, 1200.f, 0.5f }
-	};
 
 	C_Vertex * vt = new C_Vertex();
 	
@@ -56,6 +48,11 @@ HRESULT C_Main::Init()
 
 VOID C_Main::Update()
 {
+	D3DXMATRIX matWorld = {};
+
+	GraphicDevice(C_Device)->SetTransform(D3DTS_WORLD, &matWorld);
+
+	m_pCameraInstance->Update();
 
 	return;
 }
@@ -72,8 +69,8 @@ VOID C_Main::Render()
 	if (SUCCEEDED(GraphicDevice(C_Device)->BeginScene()))
 	{
 		//render
-		GraphicDevice(C_Device)->SetStreamSource(NULL, m_pVertexBuffer, 0, sizeof(S_VertexColor));
-		GraphicDevice(C_Device)->SetFVF(FVF_VER_RHW_COLOR);
+		GraphicDevice(C_Device)->SetStreamSource(NULL, m_pVertexBuffer, 0, sizeof(S_VertexXYZ));
+		GraphicDevice(C_Device)->SetFVF(FVF_VER_COLOR);
 		GraphicDevice(C_Device)->DrawPrimitive(D3DPRIMITIVETYPE::D3DPT_TRIANGLELIST, 0, 1);
 
 
@@ -82,6 +79,7 @@ VOID C_Main::Render()
 
 	GraphicDevice(C_Device)->Present(0, 0, 0, 0);
 	
+
 
 	return;
 }

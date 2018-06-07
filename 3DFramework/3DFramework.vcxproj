@@ -150,6 +150,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="3DFramework.h" />
+    <ClInclude Include="Component.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="FlagDefine.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MainCamera.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
@@ -171,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3DFramework.cpp" />
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectMgr.cpp" />

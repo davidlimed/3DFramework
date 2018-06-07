@@ -17,18 +17,18 @@ C_Vertex::~C_Vertex()
 //정점버퍼 생성
 HRESULT C_Vertex::Init()
 {
-	S_VertexColor verColor[] = 
+	S_VertexXYZ verXYZ[] = 
 	{
-		{ 150.f, 50.f, 0.5f, 1.f, 0xffff0000},
-		{ 250.f, 250.f, 0.5f, 1.f, 0xff00ff00 },
-		{ 50.f, 250.f, 0.5f, 1.f, 0xff0000ff }
+		{ 200.f, 50.f, 0.f, 0xffff0000},
+		{ 200.f, 100.f, 0.f, 0xff00ff00},
+		{ 100.f, 100.f, 0.f, 0xff0000ff}
 	
 	};
 
 	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
-		3 * sizeof(S_VertexColor), 
+		3 * sizeof(S_VertexXYZ),
 		NULL,
-		FVF_VER_RHW_COLOR, 
+		FVF_VER_COLOR, 
 		D3DPOOL_DEFAULT, 
 		&m_pVB, 
 		NULL)))
@@ -38,10 +38,10 @@ HRESULT C_Vertex::Init()
 
 	void * pVertices;
 	
-	if (FAILED(m_pVB->Lock(NULL, sizeof(verColor), &pVertices, NULL)))
+	if (FAILED(m_pVB->Lock(NULL, sizeof(verXYZ), &pVertices, NULL)))
 		return E_FAIL;
 
-	memcpy(pVertices, verColor, sizeof(verColor));
+	memcpy(pVertices, verXYZ, sizeof(verXYZ));
 
 	m_pVB->Unlock();
 
@@ -51,27 +51,6 @@ HRESULT C_Vertex::Init()
 //사용자 지정 버텍스 생성
 HRESULT C_Vertex::Init(WORD VertexCount)
 {
-	S_VertexColor * verColor = new S_VertexColor[VertexCount];
-
-	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
-		VertexCount * sizeof(S_VertexColor),
-		NULL,
-		FVF_VER_RHW_COLOR,
-		D3DPOOL_DEFAULT,
-		&m_pVB,
-		NULL)))
-	{
-		return E_FAIL;
-	}
-
-	void * pVertices;
-
-	if (FAILED(m_pVB->Lock(NULL, sizeof(verColor), &pVertices, NULL)))
-		return E_FAIL;
-
-	memcpy(pVertices, verColor, sizeof(verColor));
-
-	m_pVB->Unlock();
 
 	return S_OK;
 }

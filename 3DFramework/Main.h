@@ -3,12 +3,15 @@
 #include "stdafx.h"
 #include "Macro.h"
 
+class C_MainCamera;
+
 class C_Main
 {
 CreateBen(C_Main)
 
 private:
 	LPDIRECT3DVERTEXBUFFER9 m_pVertexBuffer;
+	C_MainCamera * m_pCameraInstance;
 
 public:
 	C_Main();

@@ -51,9 +51,6 @@
     <Filter Include="Source\06.Camera">
       <UniqueIdentifier>{62050a35-26bc-4529-9aaf-001bd409e33d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\06.Object">
-      <UniqueIdentifier>{42a2c5d6-2160-4491-83b1-b35f9e8126b2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\05.Super\01.Scene">
       <UniqueIdentifier>{899f064b-eb30-4904-868c-e3706a31fc00}</UniqueIdentifier>
     </Filter>
@@ -63,20 +60,44 @@
     <Filter Include="Source\05.Super\99.Resource\01.Component">
       <UniqueIdentifier>{125383cc-50fa-41d1-8698-35f300c59ddd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\05.Super\99.Resource\NewFilter1">
-      <UniqueIdentifier>{08192742-ff09-43ac-a8ac-99dd02a5f5be}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\04.Managers\02.SceneMgr">
       <UniqueIdentifier>{e8b1359c-6ac9-47a7-b41d-c0018485caba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\06.Object\99.Camera">
+    <Filter Include="Source\07.Component">
+      <UniqueIdentifier>{b238f5d5-14fa-42d2-a5b4-6b82b62ae246}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\06.GameObject">
+      <UniqueIdentifier>{42a2c5d6-2160-4491-83b1-b35f9e8126b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\06.GameObject\99.Camera">
       <UniqueIdentifier>{102af1d6-d2c4-4616-82c9-7e07c56700c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\06.Object\01.Player">
+    <Filter Include="Source\06.GameObject\01.Player">
       <UniqueIdentifier>{531d58d0-9499-4bbd-a978-0975088399e9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\06.Object\02.Monsters">
+    <Filter Include="Source\06.GameObject\02.Monsters">
       <UniqueIdentifier>{7625e666-9d2f-4299-9a00-bd7509a03f9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\02.Vertex">
+      <UniqueIdentifier>{08192742-ff09-43ac-a8ac-99dd02a5f5be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\03.Mesh">
+      <UniqueIdentifier>{1b5ddd43-404c-4734-9ec8-d3152fe41888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\04.Texture">
+      <UniqueIdentifier>{8f827047-b0f9-446a-8522-de55e63a14c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\NewFilter2">
+      <UniqueIdentifier>{6c0ee7ab-28b9-41e7-924b-a59662a85117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\NewFilter3">
+      <UniqueIdentifier>{68677f20-da5e-4805-8331-fc03703446cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\NewFilter4">
+      <UniqueIdentifier>{5ab85995-ebdc-478d-a68d-7a559d9fb499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\NewFilter5">
+      <UniqueIdentifier>{3dea7625-7aef-4052-bcd8-dfc27e847538}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -119,9 +140,6 @@
     <ClInclude Include="GameObjectMgr.h">
       <Filter>Source\04.Managers\01.GameObjMgr</Filter>
     </ClInclude>
-    <ClInclude Include="Vertex.h">
-      <Filter>Source\05.Super\99.Resource</Filter>
-    </ClInclude>
     <ClInclude Include="TimeMgr.h">
       <Filter>Source\04.Managers\98.TimeMgr</Filter>
     </ClInclude>
@@ -135,7 +153,16 @@
       <Filter>Source\05.Super\02.Object</Filter>
     </ClInclude>
     <ClInclude Include="MainCamera.h">
-      <Filter>Source\06.Object\99.Camera</Filter>
+      <Filter>Source\06.GameObject\99.Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Source\05.Super\99.Resource\01.Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Source\07.Component\02.Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Source\07.Component\03.Mesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -151,9 +178,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source\02.Main</Filter>
     </ClCompile>
-    <ClCompile Include="Vertex.cpp">
-      <Filter>Source\05.Super\99.Resource</Filter>
-    </ClCompile>
     <ClCompile Include="TimeMgr.cpp">
       <Filter>Source\04.Managers\98.TimeMgr</Filter>
     </ClCompile>
@@ -167,7 +191,13 @@
       <Filter>Source\04.Managers\02.SceneMgr</Filter>
     </ClCompile>
     <ClCompile Include="MainCamera.cpp">
-      <Filter>Source\06.Object\99.Camera</Filter>
+      <Filter>Source\06.GameObject\99.Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source\05.Super\99.Resource\01.Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Source\07.Component\02.Vertex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

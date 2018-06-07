@@ -23,11 +23,16 @@ public:										\
 #define	ImplementSingleton(ClassName)					\
 			ClassName* ClassName::m_pInstance = nullptr;
 
-//When Create Class, Ben
+//When make Class, Ben
 #define CreateBen(ClassName)							\
 			public:										\
 				ClassName(const ClassName&) = delete;	\
 				void operator=(const ClassName&) = delete;
+
+//When create Class Macro
+#define CreateObject(Instance, ClassName)\
+		Instance = new ClassName();\
+		Instance->Init();
 
 
 //Device Macro
@@ -35,7 +40,12 @@ public:										\
 #define Sprite(DeviceClass)	DeviceClass::GetInstance()->GetSprite()
 #define Font(DeviceClass) DeviceClass::GetInstance()->GetFont()
 
+//GetTime
+#define DeltaTime(TimeClass) TimeClass::GetInstance()->GetTime()
+
 //ERR Macro
 #define Exception(pPointer, Message) \
 			if(!pPointer) \
 			{	MessageBox(NULL, Message, L"System Err", MB_OK); return; }
+
+
