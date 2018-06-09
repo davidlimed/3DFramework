@@ -7,11 +7,12 @@ class C_Vertex
 {
 CreateBen(C_Vertex)
 
-private:
-	enum E_VERTEX_ID {eDefault};
+public:
+	enum E_VERTEX_ID {eDefault, eVertex, eIndex};
 
 private:
 	LPDIRECT3DVERTEXBUFFER9 m_pVB;
+	LPDIRECT3DINDEXBUFFER9	m_pIB;
 
 public:
 	C_Vertex();
@@ -21,11 +22,11 @@ public:
 	HRESULT Init();
 	//@Overriding
 	HRESULT Init(WORD VertexCount);
-	
+	HRESULT Init(E_VERTEX_ID eID);
+
 public:
 	LPDIRECT3DVERTEXBUFFER9 GetVB() const;
-	
-public:
+	LPDIRECT3DINDEXBUFFER9 GetIB() const;
 
 public:
 	void Release();

@@ -13,6 +13,9 @@ private:
 	LPDIRECT3DVERTEXBUFFER9 m_pVertexBuffer;
 	C_MainCamera * m_pCameraInstance;
 
+private:
+	float m_fAngle;
+
 public:
 	C_Main();
 	~C_Main();

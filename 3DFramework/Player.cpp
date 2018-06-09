@@ -1,14 +1,7 @@
 #include "stdafx.h"
 #include "Player.h"
 
-C_Player::C_Player()
-{
-	ZeroMemory(m_vPos, sizeof(D3DXVECTOR3));
-	ZeroMemory(m_vDir, sizeof(D3DXVECTOR3));
-	ZeroMemory(m_vLook, sizeof(D3DXVECTOR3));
-
-	ZeroMemory(m_matWorld, sizeof(D3DXMATRIX));
-}
+C_Player::C_Player(){}
 
 C_Player::~C_Player()
 {
@@ -16,6 +9,8 @@ C_Player::~C_Player()
 
 HRESULT C_Player::Init()
 {
+	
+
 	return S_OK;
 }
 

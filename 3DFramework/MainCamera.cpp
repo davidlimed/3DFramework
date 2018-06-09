@@ -41,6 +41,7 @@ void C_MainCamera::Init()
 
 	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_VIEW, &m_matView);
 	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_PROJECTION, &m_matProj);
+
 }
 
 void C_MainCamera::Update()
@@ -51,6 +52,18 @@ void C_MainCamera::Update()
 
 		return;
 	}
+	
+	if (GetAsyncKeyState(VK_UP))
+		m_vecPos.z += 0.1f;
+
+	if (GetAsyncKeyState(VK_DOWN))
+		m_vecPos.z -= 0.1f;
+	
+	if (GetAsyncKeyState(VK_RIGHT))
+		m_vecPos.x += 0.1f;
+
+	if (GetAsyncKeyState(VK_LEFT))
+		m_vecPos.x -= 0.1f;
 
 	D3DXMatrixLookAtLH(&m_matView, &m_vecPos, &m_vecAt, &m_vecUp);
 	D3DXMatrixPerspectiveFovLH(&m_matProj, m_fFovY, m_fAspect, m_fNear, m_fFar);

@@ -5,7 +5,8 @@
 #include "Vertex.h"
 
 C_Vertex::C_Vertex():
-	m_pVB(nullptr)
+	m_pVB(nullptr),
+	m_pIB(nullptr)
 {
 }
 
@@ -19,9 +20,9 @@ HRESULT C_Vertex::Init()
 {
 	S_VertexXYZ verXYZ[] = 
 	{
-		{ 200.f, 50.f, 0.f, 0xffff0000},
-		{ 200.f, 100.f, 0.f, 0xff00ff00},
-		{ 100.f, 100.f, 0.f, 0xff0000ff}
+		{ -1.f, -1.f, 0.f, 0xffff0000},
+		{ 1.f, -1.f, 0.f, 0xff00ff00},
+		{ 0.f, 1.f, 0.f, 0xff0000ff}
 	
 	};
 
@@ -55,9 +56,72 @@ HRESULT C_Vertex::Init(WORD VertexCount)
 	return S_OK;
 }
 
+HRESULT C_Vertex::Init(E_VERTEX_ID eID)
+{
+	if (eID == E_VERTEX_ID::eVertex)
+	{
+		if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
+			3 * sizeof(S_VertexXYZ),
+			NULL,
+			FVF_VER_COLOR,
+			D3DPOOL_DEFAULT,
+			&m_pVB,
+			NULL)))
+		{
+			return E_FAIL;
+		}
+
+		S_VertexXYZ * pVertices = nullptr;
+		
+		m_pVB->Lock(NULL, NULL, (void**)&pVertices, NULL);
+
+		pVertices[0] = { 50.f, 0.f, 2.f, 0xffff0000 };
+		pVertices[1] = {  100.f, 50.f, 2.f, 0xffff0000 };
+		pVertices[2] = { 0.f, 50.f, 2.f, 0xffff0000 };
+
+		m_pVB->Unlock();
+	}
+
+	else if (eID == E_VERTEX_ID::eIndex)
+	{
+		if (FAILED(C_Device::GetInstance()->GetDevice()->CreateIndexBuffer(
+			36 * sizeof(WORD),
+			D3DUSAGE_DYNAMIC | D3DUSAGE_WRITEONLY,
+			D3DFMT_INDEX16,
+			D3DPOOL::D3DPOOL_MANAGED,
+			&m_pIB,
+			0)))
+		{
+			return E_FAIL;
+		}
+
+		S_VertexXYZ * pVertices = nullptr;
+
+		m_pIB->Lock(NULL, NULL, (void**)&pVertices, NULL);
+
+		pVertices[0] = { 50.f, 0.f, 2.f, 0xffff0000 };
+		pVertices[1] = { 100.f, 50.f, 2.f, 0xffff0000 };
+		pVertices[2] = { 0.f, 50.f, 2.f, 0xffff0000 };
+
+		m_pIB->Unlock();
+	}
+
+	else
+	{
+
+	}
+
+	return S_OK;
+}
+
 LPDIRECT3DVERTEXBUFFER9 C_Vertex::GetVB() const
 {
 	return m_pVB;
+}
+
+LPDIRECT3DINDEXBUFFER9 C_Vertex::GetIB() const
+{
+	return m_pIB;
 }
 
 void C_Vertex::Release()
@@ -67,5 +131,10 @@ void C_Vertex::Release()
 	
 	m_pVB->Release();
 	m_pVB = nullptr;
-		
+
+	if (!m_pIB)
+		return;
+	
+	m_pIB->Release();
+	m_pIB = nullptr;
 }

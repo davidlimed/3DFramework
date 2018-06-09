@@ -3,7 +3,13 @@
 
 C_GameObject::C_GameObject():
 	m_fSpeed(0.f)
-{}
+{
+	ZeroMemory(m_vPos, sizeof(D3DXVECTOR3));
+	ZeroMemory(m_vDir, sizeof(D3DXVECTOR3));
+	ZeroMemory(m_vLook, sizeof(D3DXVECTOR3));
+
+	ZeroMemory(m_matWorld, sizeof(D3DXMATRIX));
+}
 
 C_GameObject::~C_GameObject(){}
 

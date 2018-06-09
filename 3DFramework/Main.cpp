@@ -32,35 +32,10 @@ HRESULT C_Main::Awake()
 		return E_FAIL;
 	}
 
-	/*C_Vertex * vt = new C_Vertex();
+	C_Vertex * vt = new C_Vertex();
 	
 	vt->Init();
-	m_pVertexBuffer = vt->GetVB();*/
-
-	S_VertexXYZ sVertex[] = {
-		(-1.f, -1.f, 0.f, 0xffff0000),
-		(1.f, -1.f, 0.f, 0xff00ff00),
-		(0.f, 1.f, 0.f, 0xff0000ff)
-	};
-
-	if (FAILED(GraphicDevice(C_Device)->CreateVertexBuffer(
-		3 * sizeof(S_VertexXYZ),
-		0, 
-		FVF_VER_COLOR,
-		D3DPOOL::D3DPOOL_MANAGED, 
-		&m_pVertexBuffer,
-		NULL)))
-	{
-		return E_FAIL;
-	}
-
-	void * pVertex = nullptr;
-	
-	m_pVertexBuffer->Lock(0, sizeof(S_VertexXYZ), &pVertex, 0);
-
-	memcpy(pVertex, m_pVertexBuffer, sizeof(m_pVertexBuffer));
-
-	m_pVertexBuffer->Unlock();
+	m_pVertexBuffer = vt->GetVB();
 
 	return S_OK;
 }
@@ -74,14 +49,20 @@ HRESULT C_Main::Init()
 VOID C_Main::Update()
 {
 	D3DXMATRIX matWorld = {};
+	D3DXMATRIX matTrans = {};
+	D3DXMATRIX matRot = {};
 
-	UINT unTime = timeGetTime() % 1000;
-	float fAngle = unTime * (2.f * D3DX_PI);
+	m_fAngle += 0.1f;
 
-	D3DXMatrixRotationY(&matWorld, fAngle);
+	D3DXMatrixRotationY(&matRot, D3DXToRadian(m_fAngle));
+	D3DXMatrixTranslation(&matTrans, 0.f, 0.f, 0.f);
+
+	matWorld = matRot * matTrans;
 	GraphicDevice(C_Device)->SetTransform(D3DTS_WORLD, &matWorld);
 
 	m_pCameraInstance->Update();
+
+	GraphicDevice(C_Device)->SetRenderState(D3DRENDERSTATETYPE::D3DRS_FILLMODE, D3DFILL_WIREFRAME);
 
 	return;
 }
