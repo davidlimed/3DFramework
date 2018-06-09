@@ -29,12 +29,12 @@ void C_MainCamera::Init()
 {
 	m_vecPos = D3DXVECTOR3(0.f, 3.f, -5.f);
 	m_vecAt = D3DXVECTOR3(0.f, 0.f, 0.f);
-	m_vecUp = D3DXVECTOR3(0.f, 0.1f, 0.f);
+	m_vecUp = D3DXVECTOR3(0.f, 1.f, 0.f);
 
 	m_fFovY = D3DX_PI / 4;
 	m_fAspect = 1.f;
 	m_fNear = 1.f;
-	m_fFar = 1000.f;
+	m_fFar = 100.f;
 
 	D3DXMatrixLookAtLH(&m_matView, &m_vecPos, &m_vecAt, &m_vecUp);
 	D3DXMatrixPerspectiveFovLH(&m_matProj, m_fFovY, m_fAspect, m_fNear, m_fFar);

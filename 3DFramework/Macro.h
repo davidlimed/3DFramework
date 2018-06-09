@@ -34,7 +34,6 @@ public:										\
 		Instance = new ClassName();\
 		Instance->Init();
 
-
 //Device Macro
 #define GraphicDevice(DeviceClass) DeviceClass::GetInstance()->GetDevice()
 #define Sprite(DeviceClass)	DeviceClass::GetInstance()->GetSprite()

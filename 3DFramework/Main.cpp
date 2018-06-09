@@ -32,10 +32,35 @@ HRESULT C_Main::Awake()
 		return E_FAIL;
 	}
 
-	C_Vertex * vt = new C_Vertex();
+	/*C_Vertex * vt = new C_Vertex();
 	
 	vt->Init();
-	m_pVertexBuffer = vt->GetVB();
+	m_pVertexBuffer = vt->GetVB();*/
+
+	S_VertexXYZ sVertex[] = {
+		(-1.f, -1.f, 0.f, 0xffff0000),
+		(1.f, -1.f, 0.f, 0xff00ff00),
+		(0.f, 1.f, 0.f, 0xff0000ff)
+	};
+
+	if (FAILED(GraphicDevice(C_Device)->CreateVertexBuffer(
+		3 * sizeof(S_VertexXYZ),
+		0, 
+		FVF_VER_COLOR,
+		D3DPOOL::D3DPOOL_MANAGED, 
+		&m_pVertexBuffer,
+		NULL)))
+	{
+		return E_FAIL;
+	}
+
+	void * pVertex = nullptr;
+	
+	m_pVertexBuffer->Lock(0, sizeof(S_VertexXYZ), &pVertex, 0);
+
+	memcpy(pVertex, m_pVertexBuffer, sizeof(m_pVertexBuffer));
+
+	m_pVertexBuffer->Unlock();
 
 	return S_OK;
 }
@@ -50,6 +75,10 @@ VOID C_Main::Update()
 {
 	D3DXMATRIX matWorld = {};
 
+	UINT unTime = timeGetTime() % 1000;
+	float fAngle = unTime * (2.f * D3DX_PI);
+
+	D3DXMatrixRotationY(&matWorld, fAngle);
 	GraphicDevice(C_Device)->SetTransform(D3DTS_WORLD, &matWorld);
 
 	m_pCameraInstance->Update();
@@ -71,21 +100,19 @@ VOID C_Main::Render()
 		//render
 		GraphicDevice(C_Device)->SetStreamSource(NULL, m_pVertexBuffer, 0, sizeof(S_VertexXYZ));
 		GraphicDevice(C_Device)->SetFVF(FVF_VER_COLOR);
-		GraphicDevice(C_Device)->DrawPrimitive(D3DPRIMITIVETYPE::D3DPT_TRIANGLELIST, 0, 1);
-
+		GraphicDevice(C_Device)->DrawPrimitive(D3DPRIMITIVETYPE::D3DPT_TRIANGLESTRIP, 0, 1);
 
 		GraphicDevice(C_Device)->EndScene();
 	}
 
-	GraphicDevice(C_Device)->Present(0, 0, 0, 0);
-	
-
+	GraphicDevice(C_Device)->Present(NULL, NULL, NULL, NULL);
 
 	return;
 }
 
 VOID C_Main::LastRender()
 {
+
 
 	return;
 }

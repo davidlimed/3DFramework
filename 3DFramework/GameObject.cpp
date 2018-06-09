@@ -1,13 +1,15 @@
 #include "stdafx.h"
 #include "GameObject.h"
 
-C_GameObject::C_GameObject(){}
+C_GameObject::C_GameObject():
+	m_fSpeed(0.f)
+{}
 
 C_GameObject::~C_GameObject(){}
 
 HRESULT C_GameObject::Awake()
 {
-	return E_NOTIMPL;
+	return S_OK;
 }
 
 INT C_GameObject::LastUpdate()

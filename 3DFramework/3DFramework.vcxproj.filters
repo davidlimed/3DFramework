@@ -164,6 +164,9 @@
     <ClInclude Include="Mesh.h">
       <Filter>Source\07.Component\03.Mesh</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source\06.GameObject\01.Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -198,6 +201,9 @@
     </ClCompile>
     <ClCompile Include="Vertex.cpp">
       <Filter>Source\07.Component\02.Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source\06.GameObject\01.Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
