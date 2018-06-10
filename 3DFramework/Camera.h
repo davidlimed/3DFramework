@@ -1,19 +1,16 @@
 #pragma once
 #include "stdafx.h"
-#include "Macro.h"
-#include "Component.h"
+#include "Define.h"
 
-class C_Mesh
+class C_Camera
 {
-CreateBen(C_Mesh)
+private:
 public:
-	C_Mesh();
-	virtual ~C_Mesh();
+	C_Camera();
+	~C_Camera();
 
 public:
 	virtual HRESULT Init();
 	virtual void Update();
 	virtual void Release();
-
-
 };

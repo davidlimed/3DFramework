@@ -5,6 +5,9 @@
 class C_Player : public C_GameObject
 {
 CreateBen(C_Player);
+private:
+	map<wstring, C_Component*>::iterator itor;
+
 public:
 	C_Player();
 	virtual ~C_Player();
@@ -15,4 +18,7 @@ public:
 	virtual	INT			Update();
 	virtual	VOID		Render();
 	virtual	VOID		Release();
+
+public:
+	virtual HRESULT AddComponent();
 };

@@ -14,7 +14,6 @@ public:
 	~C_SceneMgr();
 	
 public:
-	
-
+	HRESULT Init();
 	
 };

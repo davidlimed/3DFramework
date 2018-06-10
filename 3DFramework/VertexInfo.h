@@ -37,6 +37,18 @@ public:
 	}
 };
 
+struct S_VertexNormal
+{
+	D3DXVECTOR3 vPos;
+	D3DXVECTOR3 vNormal;
+
+	void operator=(const S_VertexNormal&)
+	{
+		vPos = S_VertexNormal().vPos;
+		vNormal = S_VertexNormal().vNormal;
+	}
+};
+
 struct S_VertexColor
 {
 	float fX;

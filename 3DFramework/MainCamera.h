@@ -32,7 +32,7 @@ public:
 	~C_MainCamera();
 
 public:
-	void Init();
+	HRESULT Init();
 	void Update();
 	void Release();
 
@@ -40,8 +40,8 @@ public:
 	void Vibration();
 
 public:
-	void SetInterval(UINT Interval);
-	void SetTime(UINT time);
+	void SetInterval(float Interval);
+	void SetTime(float time);
 
 public:
 	void SetTarget(D3DXVECTOR3 vecTargetPos);

@@ -4,6 +4,8 @@
 #include "Macro.h"
 
 class C_MainCamera;
+class C_Test;
+class C_Player;
 
 class C_Main
 {
@@ -15,6 +17,10 @@ private:
 
 private:
 	float m_fAngle;
+
+private:
+	C_Test * m_pTest;
+	C_Player * m_pPlayer;
 
 public:
 	C_Main();

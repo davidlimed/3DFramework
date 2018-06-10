@@ -114,6 +114,48 @@ HRESULT C_Vertex::Init(E_VERTEX_ID eID)
 	return S_OK;
 }
 
+void C_Vertex::Update()
+{
+}
+
+void C_Vertex::SetTest()
+{
+	ZeroMemory(m_pVB, sizeof(LPDIRECT3DVERTEXBUFFER9));
+
+	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
+		50 * 2 * sizeof(S_VertexNormal),
+		NULL,
+		FVF_NORMAL,
+		D3DPOOL::D3DPOOL_MANAGED,
+		&m_pVB,
+		NULL)))
+	{
+		MsgBox(L"SetTest Func Err");
+
+		return;
+	}
+
+	S_VertexNormal * pVertices = nullptr;
+
+	if (FAILED(m_pVB->Lock(NULL, NULL, (void**)&pVertices, NULL)))
+	{
+		MsgBox(L"Lock err");
+
+		return;
+	}
+	
+	for (DWORD i = 0; i < 50; i++)
+	{
+		float theta = (2 * D3DX_PI * i) / (50 - 1);
+		pVertices[2 * i].vPos = D3DXVECTOR3(sinf(theta), -1.f, cosf(theta));
+		pVertices[2 * i].vNormal = D3DXVECTOR3(sinf(theta), 0.f, cosf(theta));
+		pVertices[2 * i + 1].vPos = D3DXVECTOR3(sinf(theta), 1.f, cosf(theta));
+		pVertices[2 * i + 1].vNormal = D3DXVECTOR3(sinf(theta), 1.f, cosf(theta));
+	}
+	
+	m_pVB->Unlock();
+}
+
 LPDIRECT3DVERTEXBUFFER9 C_Vertex::GetVB() const
 {
 	return m_pVB;

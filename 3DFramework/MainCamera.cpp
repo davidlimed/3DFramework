@@ -25,7 +25,7 @@ C_MainCamera::~C_MainCamera()
 	Release();
 }
 
-void C_MainCamera::Init()
+HRESULT C_MainCamera::Init()
 {
 	m_vecPos = D3DXVECTOR3(0.f, 3.f, -5.f);
 	m_vecAt = D3DXVECTOR3(0.f, 0.f, 0.f);
@@ -42,6 +42,7 @@ void C_MainCamera::Init()
 	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_VIEW, &m_matView);
 	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_PROJECTION, &m_matProj);
 
+	return S_OK;
 }
 
 void C_MainCamera::Update()
@@ -54,16 +55,28 @@ void C_MainCamera::Update()
 	}
 	
 	if (GetAsyncKeyState(VK_UP))
-		m_vecPos.z += 0.1f;
+	{
+		m_vecPos.z += (1.f * DeltaTime(C_TimeMgr));
+		m_vecAt.z += (1.f * DeltaTime(C_TimeMgr));
+	}
 
 	if (GetAsyncKeyState(VK_DOWN))
-		m_vecPos.z -= 0.1f;
+	{
+		m_vecPos.z -= (1.f * DeltaTime(C_TimeMgr));
+		m_vecAt.z -= (1.f * DeltaTime(C_TimeMgr));
+	}
 	
 	if (GetAsyncKeyState(VK_RIGHT))
-		m_vecPos.x += 0.1f;
+	{
+		m_vecPos.x += (1.f * DeltaTime(C_TimeMgr));
+		m_vecAt.x += (1.f * DeltaTime(C_TimeMgr));
+	}
 
 	if (GetAsyncKeyState(VK_LEFT))
-		m_vecPos.x -= 0.1f;
+	{
+		m_vecPos.x -= (1.f * DeltaTime(C_TimeMgr));
+		m_vecAt.x -= (1.f * DeltaTime(C_TimeMgr));
+	}
 
 	D3DXMatrixLookAtLH(&m_matView, &m_vecPos, &m_vecAt, &m_vecUp);
 	D3DXMatrixPerspectiveFovLH(&m_matProj, m_fFovY, m_fAspect, m_fNear, m_fFar);
@@ -72,12 +85,12 @@ void C_MainCamera::Update()
 	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_PROJECTION, &m_matProj);
 }
 
-void C_MainCamera::SetInterval(UINT Interval)
+void C_MainCamera::SetInterval(float Interval)
 {
 	m_fInterval = Interval;
 }
 
-void C_MainCamera::SetTime(UINT time)
+void C_MainCamera::SetTime(float time)
 {
 	m_fTime = time;
 }

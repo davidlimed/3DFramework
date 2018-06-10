@@ -30,9 +30,12 @@ public:										\
 				void operator=(const ClassName&) = delete;
 
 //When create Class Macro
-#define CreateObject(Instance, ClassName)\
-		Instance = new ClassName();\
-		Instance->Init();
+#define CreateObject(Instance, ClassName)	\
+		Instance = new ClassName();			\
+		if(FAILED(Instance->Init()))		\
+		{									\
+			return E_FAIL;					\
+		}
 
 //Device Macro
 #define GraphicDevice(DeviceClass) DeviceClass::GetInstance()->GetDevice()
@@ -46,5 +49,8 @@ public:										\
 #define Exception(pPointer, Message) \
 			if(!pPointer) \
 			{	MessageBox(NULL, Message, L"System Err", MB_OK); return; }
+
+#define MsgBox(UnicodeString)\
+			MessageBox(NULL, UnicodeString, L"System Err", MB_OK);
 
 

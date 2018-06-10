@@ -1,9 +1,10 @@
 #pragma once
 #include "stdafx.h"
+#include "Component.h"
 #include "Macro.h"
 #include "VertexInfo.h"
 
-class C_Vertex
+class C_Vertex : public C_Component
 {
 CreateBen(C_Vertex)
 
@@ -16,13 +17,20 @@ private:
 
 public:
 	C_Vertex();
-	~C_Vertex();
+	virtual ~C_Vertex();
 
 public:
-	HRESULT Init();
+	virtual HRESULT Init();
 	//@Overriding
 	HRESULT Init(WORD VertexCount);
 	HRESULT Init(E_VERTEX_ID eID);
+
+public:
+	virtual void Update();
+
+public:
+	void SetTest();
+
 
 public:
 	LPDIRECT3DVERTEXBUFFER9 GetVB() const;
