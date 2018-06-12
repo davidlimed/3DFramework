@@ -30,6 +30,7 @@ public:
 
 public:
 	void SetTest();
+	void SetTest2();
 
 
 public:

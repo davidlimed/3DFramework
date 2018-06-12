@@ -4,6 +4,7 @@
 #include "Vertex.h"
 #include "FlagDefine.h"
 #include "TestLight.h"
+#include "RenderMgr.h"
 
 C_Test::C_Test():
 	m_pVerBuffer(nullptr),
@@ -45,16 +46,13 @@ INT C_Test::Update()
 
 VOID C_Test::Render()
 {
-	GraphicDevice(C_Device)->LightEnable(0, true);
-	GraphicDevice(C_Device)->SetRenderState(D3DRS_LIGHTING, true);
+	C_RenderMgr::GetInstance()->SetLight(true);
 
-	GraphicDevice(C_Device)->SetTransform(D3DTS_WORLD, &m_matWorld);
-	GraphicDevice(C_Device)->SetStreamSource(NULL, m_pVerBuffer, 0, sizeof(S_VertexNormal));
-	GraphicDevice(C_Device)->SetFVF(FVF_NORMAL);
-	GraphicDevice(C_Device)->DrawPrimitive(D3DPRIMITIVETYPE::D3DPT_TRIANGLESTRIP, 0, 2 * 50 -2);
+	C_RenderMgr::GetInstance()->Rendering(m_matWorld, m_pVerBuffer, sizeof(S_VertexNormal), FVF_NORMAL, D3DPT_TRIANGLESTRIP
+		, 2 * 50 - 2);
 
-	//GraphicDevice(C_Device)->LightEnable(0, false);
-	//GraphicDevice(C_Device)->SetRenderState(D3DRS_LIGHTING, false);
+	C_RenderMgr::GetInstance()->SetLight(false);
+
 }
 
 VOID C_Test::Release()

@@ -55,5 +55,4 @@ public:
 	void SetAspect(float Aspect);
 	void SetNear(float Near);
 	void SetFar(float Far);
-
 };

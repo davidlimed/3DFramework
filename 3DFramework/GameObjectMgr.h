@@ -24,6 +24,7 @@ public:
 	void AddObject(E_OBJECT_ID eID, C_GameObject * pGameObject);
 	
 public:
+	HRESULT Init();
 	void Update();
 	void LastUpdate();
 	void Render();

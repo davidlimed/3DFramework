@@ -156,6 +156,50 @@ void C_Vertex::SetTest()
 	m_pVB->Unlock();
 }
 
+void C_Vertex::SetTest2()
+{
+	ZeroMemory(m_pVB, sizeof(LPDIRECT3DVERTEXBUFFER9));
+
+	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
+		3 * sizeof(S_VertexTex),
+		NULL,
+		FVF_VER_TEX,
+		D3DPOOL::D3DPOOL_MANAGED,
+		&m_pVB,
+		NULL)))
+	{
+		MsgBox(L"SetTest Func Err");
+
+		return;
+	}
+	S_VertexTex * pVertexTex = nullptr;
+	
+	if (FAILED(m_pVB->Lock(NULL, NULL, (void**)&pVertexTex, NULL)))
+	{
+		MsgBox(L"Lock err");
+
+		return;
+	}
+	pVertexTex[0].vPos = D3DXVECTOR3(0.f, 1.f, 2.f);
+	pVertexTex[0].dwColor = D3DCOLOR_ARGB(255, 255, 0, 0);
+	pVertexTex[0].fU = 0.f;
+	pVertexTex[0].fV = 0.f;
+
+	pVertexTex[1].vPos = D3DXVECTOR3(1.f, 0.f, 2.f);
+	pVertexTex[1].dwColor = D3DCOLOR_ARGB(255, 0, 255, 0);
+	pVertexTex[1].fU = 1.f;
+	pVertexTex[1].fV = 0.f;
+
+	pVertexTex[2].vPos = D3DXVECTOR3(-1.f, 0.f, 2.f);
+	pVertexTex[2].dwColor = D3DCOLOR_ARGB(255, 0, 0, 255);
+	pVertexTex[2].fU = 0.f;
+	pVertexTex[2].fV = 1.f;
+	
+
+	m_pVB->Unlock();
+
+}
+
 LPDIRECT3DVERTEXBUFFER9 C_Vertex::GetVB() const
 {
 	return m_pVB;

@@ -22,6 +22,13 @@ void C_GameObjectMgr::AddObject(E_OBJECT_ID eID, C_GameObject * pGameObject)
 	m_mapGameObject[eID].back()->Init();
 }
 
+HRESULT C_GameObjectMgr::Init()
+{
+	
+
+	return S_OK;
+}
+
 void C_GameObjectMgr::Update()
 {
 	map<E_OBJECT_ID, list<C_GameObject*>>::iterator itorfirst = m_mapGameObject.begin();

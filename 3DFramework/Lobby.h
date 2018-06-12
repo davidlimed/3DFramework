@@ -2,13 +2,15 @@
 #include "Scene.h"
 #include "Macro.h"
 
-class C_Logo : public C_Scene
+class C_Lobby : public C_Scene
 {
-CreateBen(C_Logo)
+CreateBen(C_Lobby)
+private:
+	
 
 public:
-	C_Logo();
-	virtual ~C_Logo();
+	C_Lobby();
+	virtual ~C_Lobby();
 
 public:
 	virtual HRESULT Init();
@@ -16,5 +18,4 @@ public:
 	virtual VOID LastUpdate();
 	virtual VOID Render();
 	virtual VOID LastRender();
-
 };

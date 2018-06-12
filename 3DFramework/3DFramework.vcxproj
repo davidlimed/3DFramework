@@ -155,10 +155,15 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Device.h" />
+    <ClInclude Include="Effect.h" />
+    <ClInclude Include="EffectMgr.h" />
     <ClInclude Include="FlagDefine.h" />
     <ClInclude Include="Functor.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectMgr.h" />
+    <ClInclude Include="KeyMgr.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Lobby.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Main.h" />
@@ -170,10 +175,13 @@
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="Stage01.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Structs.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="TestLight.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="TimeMgr.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Vertex.h" />
@@ -185,15 +193,21 @@
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Device.cpp" />
+    <ClCompile Include="EffectMgr.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectMgr.cpp" />
+    <ClCompile Include="KeyMgr.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Lobby.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainCamera.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RenderMgr.cpp" />
+    <ClCompile Include="ResourceMgr.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="Stage01.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

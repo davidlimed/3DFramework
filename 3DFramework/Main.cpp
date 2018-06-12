@@ -12,7 +12,7 @@
 #include "Player.h"
 
 C_Main::C_Main():
-	m_pVertexBuffer(nullptr),
+	m_pTexture(nullptr),
 	m_pCameraInstance(nullptr),
 	m_pPlayer(nullptr)
 {
@@ -27,10 +27,11 @@ HRESULT C_Main::Awake()
 {
 	HRESULT hr = C_Device::GetInstance()->Init(g_hWnd);
 
-	GraphicDevice(C_Device)->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-	GraphicDevice(C_Device)->SetRenderState(D3DRS_ZENABLE, TRUE);
-	GraphicDevice(C_Device)->SetRenderState(D3DRS_LIGHTING, false);
+	Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+	Device->SetRenderState(D3DRS_ZENABLE, TRUE);
+	Device->SetRenderState(D3DRS_LIGHTING, FALSE);
 
+	////////////////////////////////////////////////////////////////////////
 	CreateObject(m_pCameraInstance, C_MainCamera);
 	CreateObject(m_pTest, C_Test);
 	CreateObject(m_pPlayer, C_Player);
@@ -49,6 +50,14 @@ HRESULT C_Main::Awake()
 
 HRESULT C_Main::Init()
 {
+	if (FAILED(D3DXCreateTextureFromFile(C_Device::GetInstance()->GetDevice(),
+		L"../Texture/Tex.png",
+		&m_pTexture)))
+	{
+		return E_FAIL;
+	}
+
+	
 
 	return S_OK;
 }
@@ -75,9 +84,9 @@ VOID C_Main::LastUpdate()
 
 VOID C_Main::Render()
 {
-	GraphicDevice(C_Device)->Clear(NULL, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER | D3DCLEAR_STENCIL, D3DCOLOR_ARGB(255, 0, 0, 255), 1.f, 0);
+	Device->Clear(NULL, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER | D3DCLEAR_STENCIL, D3DCOLOR_ARGB(255, 0, 0, 255), 1.f, 0);
 
-	if (SUCCEEDED(GraphicDevice(C_Device)->BeginScene()))
+	if (SUCCEEDED(Device->BeginScene()))
 	{
 		//render
 		m_pPlayer->Render();
@@ -91,8 +100,8 @@ VOID C_Main::Render()
 VOID C_Main::LastRender()
 {
 
-	GraphicDevice(C_Device)->EndScene();
-	GraphicDevice(C_Device)->Present(NULL, NULL, NULL, NULL);
+	Device->EndScene();
+	Device->Present(NULL, NULL, NULL, NULL);
 	return;
 }
 

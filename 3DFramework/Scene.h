@@ -3,7 +3,6 @@
 
 class C_Scene
 {
-private:
 public:
 	C_Scene() {}
 	virtual ~C_Scene() {}

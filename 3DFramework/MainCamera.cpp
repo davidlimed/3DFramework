@@ -39,8 +39,8 @@ HRESULT C_MainCamera::Init()
 	D3DXMatrixLookAtLH(&m_matView, &m_vecPos, &m_vecAt, &m_vecUp);
 	D3DXMatrixPerspectiveFovLH(&m_matProj, m_fFovY, m_fAspect, m_fNear, m_fFar);
 
-	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_VIEW, &m_matView);
-	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_PROJECTION, &m_matProj);
+	Device->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_VIEW, &m_matView);
+	Device->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_PROJECTION, &m_matProj);
 
 	return S_OK;
 }
@@ -56,33 +56,33 @@ void C_MainCamera::Update()
 	
 	if (GetAsyncKeyState(VK_UP))
 	{
-		m_vecPos.z += (1.f * DeltaTime(C_TimeMgr));
-		m_vecAt.z += (1.f * DeltaTime(C_TimeMgr));
+		m_vecPos.z += (1.f * DeltaTime);
+		m_vecAt.z += (1.f * DeltaTime);
 	}
 
 	if (GetAsyncKeyState(VK_DOWN))
 	{
-		m_vecPos.z -= (1.f * DeltaTime(C_TimeMgr));
-		m_vecAt.z -= (1.f * DeltaTime(C_TimeMgr));
+		m_vecPos.z -= (1.f * DeltaTime);
+		m_vecAt.z -= (1.f * DeltaTime);
 	}
 	
 	if (GetAsyncKeyState(VK_RIGHT))
 	{
-		m_vecPos.x += (1.f * DeltaTime(C_TimeMgr));
-		m_vecAt.x += (1.f * DeltaTime(C_TimeMgr));
+		m_vecPos.x += (1.f * DeltaTime);
+		m_vecAt.x += (1.f * DeltaTime);
 	}
 
 	if (GetAsyncKeyState(VK_LEFT))
 	{
-		m_vecPos.x -= (1.f * DeltaTime(C_TimeMgr));
-		m_vecAt.x -= (1.f * DeltaTime(C_TimeMgr));
+		m_vecPos.x -= (1.f * DeltaTime);
+		m_vecAt.x -= (1.f * DeltaTime);
 	}
 
 	D3DXMatrixLookAtLH(&m_matView, &m_vecPos, &m_vecAt, &m_vecUp);
 	D3DXMatrixPerspectiveFovLH(&m_matProj, m_fFovY, m_fAspect, m_fNear, m_fFar);
 
-	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_VIEW, &m_matView);
-	GraphicDevice(C_Device)->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_PROJECTION, &m_matProj);
+	Device->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_VIEW, &m_matView);
+	Device->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_PROJECTION, &m_matProj);
 }
 
 void C_MainCamera::SetInterval(float Interval)

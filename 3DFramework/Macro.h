@@ -37,14 +37,6 @@ public:										\
 			return E_FAIL;					\
 		}
 
-//Device Macro
-#define GraphicDevice(DeviceClass) DeviceClass::GetInstance()->GetDevice()
-#define Sprite(DeviceClass)	DeviceClass::GetInstance()->GetSprite()
-#define Font(DeviceClass) DeviceClass::GetInstance()->GetFont()
-
-//GetTime
-#define DeltaTime(TimeClass) TimeClass::GetInstance()->GetTime()
-
 //ERR Macro
 #define Exception(pPointer, Message) \
 			if(!pPointer) \
@@ -52,5 +44,12 @@ public:										\
 
 #define MsgBox(UnicodeString)\
 			MessageBox(NULL, UnicodeString, L"System Err", MB_OK);
+
+#define KeyMgr			C_KeyMgr::GetInstance()
+#define RenderMgr		C_RenderMgr::GetInstance()
+#define Device			C_Device::GetInstance()->GetDevice()
+#define DeviceSprite	C_Device::GetInstance()->GetSprite()
+#define DeivceFont		C_Device::GetInstance()->GetFont()
+#define DeltaTime		C_TimeMgr::GetInstance()->GetTime()
 
 

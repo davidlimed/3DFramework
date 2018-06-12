@@ -30,32 +30,17 @@
     <Filter Include="Source\04.Managers">
       <UniqueIdentifier>{7897c0c7-818f-4b5f-be7c-8a8d81de095e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\05.Super">
-      <UniqueIdentifier>{798a282c-271c-422b-81e2-3fa0db1185e7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\04.Managers\01.GameObjMgr">
       <UniqueIdentifier>{8cae73c8-fee7-4bc2-9824-99b80b639c49}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\04.Managers\99.ResourceMgr">
       <UniqueIdentifier>{3c6f15b5-8e8b-4b7d-aaa3-952a57461f63}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\05.Super\99.Resource">
-      <UniqueIdentifier>{d6a681ae-0547-459b-941b-31c5bcf22cad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\04.Managers\98.TimeMgr">
       <UniqueIdentifier>{1396781a-3703-421e-ad10-964e22b3ca90}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\04.Managers\97.CollisionMgr">
       <UniqueIdentifier>{ac17c692-bc08-4a49-9d9c-b0382f5e4af7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\05.Super\01.Scene">
-      <UniqueIdentifier>{899f064b-eb30-4904-868c-e3706a31fc00}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\05.Super\02.Object">
-      <UniqueIdentifier>{bf761ee0-0136-40b1-aae5-fd2ecc6f2cba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\05.Super\99.Resource\01.Component">
-      <UniqueIdentifier>{125383cc-50fa-41d1-8698-35f300c59ddd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\04.Managers\02.SceneMgr">
       <UniqueIdentifier>{e8b1359c-6ac9-47a7-b41d-c0018485caba}</UniqueIdentifier>
@@ -65,9 +50,6 @@
     </Filter>
     <Filter Include="Source\06.GameObject">
       <UniqueIdentifier>{42a2c5d6-2160-4491-83b1-b35f9e8126b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\06.GameObject\99.Camera">
-      <UniqueIdentifier>{102af1d6-d2c4-4616-82c9-7e07c56700c1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\06.GameObject\01.Player">
       <UniqueIdentifier>{531d58d0-9499-4bbd-a978-0975088399e9}</UniqueIdentifier>
@@ -84,17 +66,8 @@
     <Filter Include="Source\07.Component\04.Texture">
       <UniqueIdentifier>{8f827047-b0f9-446a-8522-de55e63a14c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\07.Component\NewFilter4">
-      <UniqueIdentifier>{5ab85995-ebdc-478d-a68d-7a559d9fb499}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\07.Component\NewFilter5">
-      <UniqueIdentifier>{3dea7625-7aef-4052-bcd8-dfc27e847538}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\06.GameObject\00. TestObj">
       <UniqueIdentifier>{06b9596e-3159-485c-a3a3-95bdc7bde0f7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\07.Component\99.TestLight">
-      <UniqueIdentifier>{6c0ee7ab-28b9-41e7-924b-a59662a85117}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\07.Component\01. UI">
       <UniqueIdentifier>{68677f20-da5e-4805-8331-fc03703446cc}</UniqueIdentifier>
@@ -105,15 +78,6 @@
     <Filter Include="Source\07.Component\01. UI\02. HUD">
       <UniqueIdentifier>{6f104c7d-81c4-4b83-aaf2-11b6aa64e497}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\06.GameObject\99.Camera\01.Super">
-      <UniqueIdentifier>{2cbe08a2-3b22-45a7-9fa3-81cdc33cf181}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\06.GameObject\99.Camera\02.MainCamera">
-      <UniqueIdentifier>{69029697-2d49-4156-977f-dacf416960e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\06.GameObject\99.Camera\03.SubCamera">
-      <UniqueIdentifier>{7af3e437-3bb8-46c0-9fce-8d5f31cf09b6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\04.Managers\96. RenderMgr">
       <UniqueIdentifier>{d423d67a-cd9b-4301-ace3-321cbb1c0e3a}</UniqueIdentifier>
     </Filter>
@@ -122,6 +86,54 @@
     </Filter>
     <Filter Include="Source\08.Camera">
       <UniqueIdentifier>{62050a35-26bc-4529-9aaf-001bd409e33d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Scene">
+      <UniqueIdentifier>{798a282c-271c-422b-81e2-3fa0db1185e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Scene\03.Camera">
+      <UniqueIdentifier>{2cbe08a2-3b22-45a7-9fa3-81cdc33cf181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Scene\01.Logo">
+      <UniqueIdentifier>{bcf7c387-7dfc-49aa-b927-047a94149b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Scene\02.Lobby">
+      <UniqueIdentifier>{bbdf1608-c162-4ce1-a0a3-fe88d945d9bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Scene\03.Stage01">
+      <UniqueIdentifier>{bb52f3d8-0a25-4887-a9e8-d6b19bb73a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\07.Component\00.Super">
+      <UniqueIdentifier>{5ab85995-ebdc-478d-a68d-7a559d9fb499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\06.GameObject\00.Super">
+      <UniqueIdentifier>{7d46f99f-f7fb-482e-aaf1-fcb1cf3d4d71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\05.Scene\00.Scene">
+      <UniqueIdentifier>{899f064b-eb30-4904-868c-e3706a31fc00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\08.Camera\00.Super">
+      <UniqueIdentifier>{c05064dd-9fcb-4377-a8e0-6130b5639df3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\08.Camera\01.MainCamera">
+      <UniqueIdentifier>{69029697-2d49-4156-977f-dacf416960e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\08.Camera\02.SubCamera">
+      <UniqueIdentifier>{7af3e437-3bb8-46c0-9fce-8d5f31cf09b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\06.GameObject\99.Light">
+      <UniqueIdentifier>{6c0ee7ab-28b9-41e7-924b-a59662a85117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\96.Shader">
+      <UniqueIdentifier>{efcc8fe6-6eee-4665-9660-9f94e55105db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\04.Managers\03.KeyMgr">
+      <UniqueIdentifier>{2d9138c3-2a6e-4b66-836a-9a59a13131d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\06.GameObject\98.Efferct">
+      <UniqueIdentifier>{858616c2-2efc-4679-add4-82e00bbbddd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\04.Managers\95.EffectMgr">
+      <UniqueIdentifier>{51362880-810b-436c-b3fb-476b1b69941e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -168,16 +180,10 @@
       <Filter>Source\04.Managers\98.TimeMgr</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>Source\05.Super\01.Scene</Filter>
+      <Filter>Source\05.Scene\00.Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneMgr.h">
       <Filter>Source\04.Managers\02.SceneMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Source\05.Super\02.Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Source\05.Super\99.Resource\01.Component</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Source\07.Component\02.Vertex</Filter>
@@ -195,22 +201,52 @@
       <Filter>Source\06.GameObject\00. TestObj</Filter>
     </ClInclude>
     <ClInclude Include="TestLight.h">
-      <Filter>Source\07.Component\99.TestLight</Filter>
+      <Filter>Source\06.GameObject\99.Light</Filter>
     </ClInclude>
     <ClInclude Include="UI.h">
       <Filter>Source\07.Component\01. UI\01. Super</Filter>
     </ClInclude>
-    <ClInclude Include="MainCamera.h">
-      <Filter>Source\06.GameObject\99.Camera\02.MainCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Source\06.GameObject\99.Camera\01.Super</Filter>
-    </ClInclude>
     <ClInclude Include="RenderMgr.h">
       <Filter>Source\04.Managers\96. RenderMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Source\07.Component\00.Super</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Source\06.GameObject\00.Super</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage01.h">
+      <Filter>Source\05.Scene\03.Stage01</Filter>
+    </ClInclude>
     <ClInclude Include="Logo.h">
-      <Filter>Source\09.Scene</Filter>
+      <Filter>Source\05.Scene\01.Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="Lobby.h">
+      <Filter>Source\05.Scene\02.Lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="Structs.h">
+      <Filter>Source\97.Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Source\07.Component\04.Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Source\08.Camera\00.Super</Filter>
+    </ClInclude>
+    <ClInclude Include="MainCamera.h">
+      <Filter>Source\08.Camera\01.MainCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Source\06.GameObject\99.Light</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMgr.h">
+      <Filter>Source\04.Managers\03.KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Source\06.GameObject\98.Efferct</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectMgr.h">
+      <Filter>Source\04.Managers\95.EffectMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -232,14 +268,8 @@
     <ClCompile Include="GameObjectMgr.cpp">
       <Filter>Source\04.Managers\01.GameObjMgr</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source\05.Super\02.Object</Filter>
-    </ClCompile>
     <ClCompile Include="SceneMgr.cpp">
       <Filter>Source\04.Managers\02.SceneMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>Source\05.Super\99.Resource\01.Component</Filter>
     </ClCompile>
     <ClCompile Include="Vertex.cpp">
       <Filter>Source\07.Component\02.Vertex</Filter>
@@ -257,22 +287,46 @@
       <Filter>Source\06.GameObject\00. TestObj</Filter>
     </ClCompile>
     <ClCompile Include="TestLight.cpp">
-      <Filter>Source\07.Component\99.TestLight</Filter>
+      <Filter>Source\06.GameObject\99.Light</Filter>
     </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>Source\07.Component\01. UI\01. Super</Filter>
     </ClCompile>
-    <ClCompile Include="MainCamera.cpp">
-      <Filter>Source\06.GameObject\99.Camera\02.MainCamera</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source\06.GameObject\99.Camera\01.Super</Filter>
-    </ClCompile>
     <ClCompile Include="RenderMgr.cpp">
       <Filter>Source\04.Managers\96. RenderMgr</Filter>
     </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source\07.Component\00.Super</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source\06.GameObject\00.Super</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage01.cpp">
+      <Filter>Source\05.Scene\03.Stage01</Filter>
+    </ClCompile>
     <ClCompile Include="Logo.cpp">
-      <Filter>Source\09.Scene</Filter>
+      <Filter>Source\05.Scene\01.Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="Lobby.cpp">
+      <Filter>Source\05.Scene\02.Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>Source\04.Managers\99.ResourceMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source\08.Camera\00.Super</Filter>
+    </ClCompile>
+    <ClCompile Include="MainCamera.cpp">
+      <Filter>Source\08.Camera\01.MainCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Source\06.GameObject\99.Light</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMgr.cpp">
+      <Filter>Source\04.Managers\03.KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectMgr.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -14,6 +14,11 @@ public:
 	~C_SceneMgr();
 	
 public:
-	HRESULT Init();
-	
+	void Update();
+	void LastUpdate();
+	void Render();
+	void LastRender();
+
+public:
+
 };

@@ -2,19 +2,17 @@
 #include "Scene.h"
 #include "Macro.h"
 
-class C_Logo : public C_Scene
+class C_Stage1 : public C_Scene
 {
-CreateBen(C_Logo)
-
+CreateBen(C_Stage1)
 public:
-	C_Logo();
-	virtual ~C_Logo();
+	C_Stage1();
+	virtual ~C_Stage1();
 
-public:
+private:
 	virtual HRESULT Init();
 	virtual VOID Update();
 	virtual VOID LastUpdate();
 	virtual VOID Render();
 	virtual VOID LastRender();
-
 };

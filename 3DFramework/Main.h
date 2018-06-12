@@ -12,8 +12,8 @@ class C_Main
 CreateBen(C_Main)
 
 private:
-	LPDIRECT3DVERTEXBUFFER9 m_pVertexBuffer;
-	C_MainCamera * m_pCameraInstance;
+	C_MainCamera *		m_pCameraInstance;
+	LPDIRECT3DTEXTURE9	m_pTexture;
 
 private:
 	float m_fAngle;
