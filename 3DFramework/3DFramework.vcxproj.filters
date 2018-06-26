@@ -81,9 +81,6 @@
     <Filter Include="Source\04.Managers\96. RenderMgr">
       <UniqueIdentifier>{d423d67a-cd9b-4301-ace3-321cbb1c0e3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\09.Scene">
-      <UniqueIdentifier>{479977b6-4eb0-4cf0-b727-6fbdc5164ac7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\08.Camera">
       <UniqueIdentifier>{62050a35-26bc-4529-9aaf-001bd409e33d}</UniqueIdentifier>
     </Filter>
@@ -134,6 +131,15 @@
     </Filter>
     <Filter Include="Source\04.Managers\95.EffectMgr">
       <UniqueIdentifier>{51362880-810b-436c-b3fb-476b1b69941e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\09.Elements">
+      <UniqueIdentifier>{479977b6-4eb0-4cf0-b727-6fbdc5164ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\09.Elements\01.Loading">
+      <UniqueIdentifier>{54f00a66-0fbc-4302-9f44-784abb796104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\06.GameObject\97.Cube">
+      <UniqueIdentifier>{981a369d-f282-42db-8ead-4e2644c4fa12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -227,9 +233,6 @@
     <ClInclude Include="Structs.h">
       <Filter>Source\97.Structs</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Source\07.Component\04.Texture</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Source\08.Camera\00.Super</Filter>
     </ClInclude>
@@ -247,6 +250,15 @@
     </ClInclude>
     <ClInclude Include="EffectMgr.h">
       <Filter>Source\04.Managers\95.EffectMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Loading.h">
+      <Filter>Source\09.Elements\01.Loading</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexInfo.h">
+      <Filter>Source\97.Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Source\06.GameObject\97.Cube</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +338,12 @@
       <Filter>Source\04.Managers\03.KeyMgr</Filter>
     </ClCompile>
     <ClCompile Include="EffectMgr.cpp">
+      <Filter>Source\04.Managers\95.EffectMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Loading.cpp">
+      <Filter>Source\09.Elements\01.Loading</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

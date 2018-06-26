@@ -3,6 +3,11 @@
 
 ImplementSingleton(C_CollisionMgr)
 
+C_CollisionMgr::~C_CollisionMgr()
+{
+	Release();
+}
+
 HRESULT C_CollisionMgr::Init()
 {
 	return S_OK;

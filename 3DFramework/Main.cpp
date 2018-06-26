@@ -10,6 +10,7 @@
 #include "TimeMgr.h"
 #include "Test.h"
 #include "Player.h"
+#include "GameObjectMgr.h"
 
 C_Main::C_Main():
 	m_pTexture(nullptr),
@@ -29,12 +30,11 @@ HRESULT C_Main::Awake()
 
 	Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 	Device->SetRenderState(D3DRS_ZENABLE, TRUE);
-	Device->SetRenderState(D3DRS_LIGHTING, FALSE);
+	Device->SetRenderState(D3DRS_LIGHTING, false);
 
 	////////////////////////////////////////////////////////////////////////
 	CreateObject(m_pCameraInstance, C_MainCamera);
-	CreateObject(m_pTest, C_Test);
-	CreateObject(m_pPlayer, C_Player);
+	GameObjMgr->Init();
 
 	//Create Device
 	if (FAILED(hr))
@@ -57,8 +57,6 @@ HRESULT C_Main::Init()
 		return E_FAIL;
 	}
 
-	
-
 	return S_OK;
 }
 
@@ -67,8 +65,7 @@ VOID C_Main::Update()
 	C_TimeMgr::GetInstance()->SetTime();
 
 	//Obejct Update Begin
-	m_pPlayer->Update();
-	m_pTest->Update();
+	GameObjMgr->Update();
 
 	//Object Update End
 
@@ -79,6 +76,8 @@ VOID C_Main::Update()
 
 VOID C_Main::LastUpdate()
 {
+	GameObjMgr->LastUpdate();
+
 	return;
 }
 
@@ -89,8 +88,7 @@ VOID C_Main::Render()
 	if (SUCCEEDED(Device->BeginScene()))
 	{
 		//render
-		m_pPlayer->Render();
-		m_pTest->Render();
+		GameObjMgr->Render();
 	}
 
 
@@ -99,7 +97,7 @@ VOID C_Main::Render()
 
 VOID C_Main::LastRender()
 {
-
+	GameObjMgr->LastRender();
 	Device->EndScene();
 	Device->Present(NULL, NULL, NULL, NULL);
 	return;
@@ -107,7 +105,7 @@ VOID C_Main::LastRender()
 
 VOID C_Main::Release()
 {
-
+	GameObjMgr->Release();
 
 	C_Device::GetInstance()->Release();
 	return;

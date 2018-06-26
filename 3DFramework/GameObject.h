@@ -27,6 +27,7 @@ protected:
 protected:
 	float		m_fSpeed;
 	float		m_fAngle;
+	UINT		m_unInterval;
 
 public:
 	C_GameObject();

@@ -2,9 +2,18 @@
 #include "GameObjectMgr.h"
 #include "Functor.h"
 #include "GameObject.h"
+#include "Player.h"
+#include "Test.h"
+
+ImplementSingleton(C_GameObjectMgr)
+
+C_GameObjectMgr::C_GameObjectMgr()
+{
+}
 
 C_GameObjectMgr::~C_GameObjectMgr()
 {
+	Release();
 }
 
 void C_GameObjectMgr::AddObject(E_OBJECT_ID eID, C_GameObject * pGameObject)
@@ -24,7 +33,12 @@ void C_GameObjectMgr::AddObject(E_OBJECT_ID eID, C_GameObject * pGameObject)
 
 HRESULT C_GameObjectMgr::Init()
 {
-	
+	C_GameObject * pGameObejct = new C_Player();
+
+	AddObject(E_OBJECT_ID::ePlayer, pGameObejct);
+
+	pGameObejct = new C_Test();
+	AddObject(E_OBJECT_ID::eTest, pGameObejct);
 
 	return S_OK;
 }
@@ -87,6 +101,10 @@ void C_GameObjectMgr::LastRender()
 			(*itorSecond)->LastRender();
 		}
 	}
+}
+
+void C_GameObjectMgr::SetPlayerPos(D3DXVECTOR3 vPos)
+{
 }
 
 list<C_GameObject*> C_GameObjectMgr::GetGameObejctList(E_OBJECT_ID ID)

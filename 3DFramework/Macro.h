@@ -51,5 +51,6 @@ public:										\
 #define DeviceSprite	C_Device::GetInstance()->GetSprite()
 #define DeivceFont		C_Device::GetInstance()->GetFont()
 #define DeltaTime		C_TimeMgr::GetInstance()->GetTime()
+#define GameObjMgr		C_GameObjectMgr::GetInstance()
 
 

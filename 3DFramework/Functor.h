@@ -11,17 +11,17 @@ void SafeRelease(T * pInstance)
 	pInstance = nullptr;
 }
 
-class CTagFinder
+class C_Finder
 {
 public:
-	explicit CTagFinder(const TCHAR* pTag) : m_pTag(pTag) {}
-	~CTagFinder(void) {}
+	explicit C_Finder(const TCHAR* pTag) : m_pTag(pTag) {}
+	~C_Finder(void) {}
 public:
 	template <typename T> bool operator () (T& Pair)
 	{
-		int iResult = lstrcmp(m_pTag, Pair.first);
+		int nResult = lstrcmp(m_pTag, Pair.first);
 
-		if (0 == iResult)
+		if (!nResult)
 			return true;
 		return false;
 	}

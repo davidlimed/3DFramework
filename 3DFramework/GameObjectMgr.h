@@ -8,7 +8,7 @@ class C_GameObjectMgr
 {
 DeclareSingleton(C_GameObjectMgr)
 public:
-	enum E_OBJECT_ID { ePlayer, eEnd};
+	enum E_OBJECT_ID { ePlayer, eTest, eEnd};
 
 private:
 	map<E_OBJECT_ID, list<C_GameObject*>> m_mapGameObject;
@@ -30,8 +30,11 @@ public:
 	void Render();
 	void LastRender();
 
+	//Set
 public:
+	void SetPlayerPos(D3DXVECTOR3 vPos);
 
+	//Get
 public:
 	list<C_GameObject*> GetGameObejctList(E_OBJECT_ID ID);
 	C_GameObject * GetPlayer();

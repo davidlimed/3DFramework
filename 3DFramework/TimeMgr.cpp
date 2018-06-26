@@ -12,7 +12,10 @@ C_TimeMgr::C_TimeMgr():
 	ZeroMemory(&m_CpuTick, sizeof(LARGE_INTEGER));
 }
 
-C_TimeMgr::~C_TimeMgr(){}
+C_TimeMgr::~C_TimeMgr()
+{
+	Release();
+}
 
 float C_TimeMgr::GetTime()
 {

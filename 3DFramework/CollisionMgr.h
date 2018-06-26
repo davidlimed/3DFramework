@@ -9,6 +9,9 @@ private:
 	C_CollisionMgr() {}
 
 public:
+	~C_CollisionMgr();
+
+public:
 	HRESULT Init();
 	void Update();
 };

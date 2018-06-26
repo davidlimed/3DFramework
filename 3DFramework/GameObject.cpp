@@ -3,7 +3,8 @@
 
 C_GameObject::C_GameObject():
 	m_fSpeed(0.f),
-	m_fAngle(0.f)
+	m_fAngle(0.f),
+	m_unInterval(0.f)
 {
 	ZeroMemory(m_vPos, sizeof(D3DXVECTOR3));
 	ZeroMemory(m_vDir, sizeof(D3DXVECTOR3));

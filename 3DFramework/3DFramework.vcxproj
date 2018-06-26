@@ -153,6 +153,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Component.h" />
+    <ClInclude Include="Cube.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="Effect.h" />
@@ -161,8 +162,10 @@
     <ClInclude Include="Functor.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectMgr.h" />
+    <ClInclude Include="IndexInfo.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="Loading.h" />
     <ClInclude Include="Lobby.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="Macro.h" />
@@ -181,7 +184,6 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="TestLight.h" />
-    <ClInclude Include="Texture.h" />
     <ClInclude Include="TimeMgr.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Vertex.h" />
@@ -192,12 +194,14 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="EffectMgr.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectMgr.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Loading.cpp" />
     <ClCompile Include="Lobby.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="Main.cpp" />

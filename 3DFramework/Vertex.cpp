@@ -107,9 +107,7 @@ HRESULT C_Vertex::Init(E_VERTEX_ID eID)
 	}
 
 	else
-	{
-
-	}
+	{}
 
 	return S_OK;
 }
@@ -161,7 +159,7 @@ void C_Vertex::SetTest2()
 	ZeroMemory(m_pVB, sizeof(LPDIRECT3DVERTEXBUFFER9));
 
 	if (FAILED(C_Device::GetInstance()->GetDevice()->CreateVertexBuffer(
-		3 * sizeof(S_VertexTex),
+		4 * sizeof(S_VertexTex),
 		NULL,
 		FVF_VER_TEX,
 		D3DPOOL::D3DPOOL_MANAGED,
@@ -172,6 +170,7 @@ void C_Vertex::SetTest2()
 
 		return;
 	}
+
 	S_VertexTex * pVertexTex = nullptr;
 	
 	if (FAILED(m_pVB->Lock(NULL, NULL, (void**)&pVertexTex, NULL)))
@@ -180,24 +179,91 @@ void C_Vertex::SetTest2()
 
 		return;
 	}
-	pVertexTex[0].vPos = D3DXVECTOR3(0.f, 1.f, 2.f);
+	pVertexTex[0].vPos = D3DXVECTOR3(-2.f, 2.f, 2.f);
 	pVertexTex[0].dwColor = D3DCOLOR_ARGB(255, 255, 0, 0);
 	pVertexTex[0].fU = 0.f;
 	pVertexTex[0].fV = 0.f;
 
-	pVertexTex[1].vPos = D3DXVECTOR3(1.f, 0.f, 2.f);
+	pVertexTex[1].vPos = D3DXVECTOR3(2.f, 2.f, 2.f);
 	pVertexTex[1].dwColor = D3DCOLOR_ARGB(255, 0, 255, 0);
 	pVertexTex[1].fU = 1.f;
 	pVertexTex[1].fV = 0.f;
 
-	pVertexTex[2].vPos = D3DXVECTOR3(-1.f, 0.f, 2.f);
+	pVertexTex[2].vPos = D3DXVECTOR3(-2.f, -2.f, 2.f);
 	pVertexTex[2].dwColor = D3DCOLOR_ARGB(255, 0, 0, 255);
 	pVertexTex[2].fU = 0.f;
 	pVertexTex[2].fV = 1.f;
+
+	pVertexTex[3].vPos = D3DXVECTOR3(-2.f, -2.f, 2.f);
+	pVertexTex[3].dwColor = D3DCOLOR_ARGB(255, 0, 0, 255);
+	pVertexTex[3].fU = 1.f;
+	pVertexTex[3].fV = 1.f;
 	
+	m_pVB->Unlock();
+
+}
+
+void C_Vertex::SetTest3()
+{
+	S_VertexXYZ * pVertex = nullptr;
+	ZeroMemory(&m_pVB, sizeof(LPDIRECT3DVERTEXBUFFER9));
+
+	if (FAILED(Device->CreateVertexBuffer(
+		8 * sizeof(S_VertexXYZ),
+		NULL,
+		FVF_VER_COLOR,
+		D3DPOOL::D3DPOOL_MANAGED,
+		&m_pVB,
+		NULL)))
+	{
+		MsgBox(L"SetTest Func Err");
+
+		return;
+	}
+
+	m_pVB->Lock(NULL, NULL, (void**)&pVertex, NULL);
+
+	pVertex[0].fX = -1; pVertex[0].fY = 1; pVertex[0].fZ = 1; pVertex[0].dwColor = 0xffff0000;
+	pVertex[1].fX = 1; pVertex[1].fY = 1; pVertex[1].fZ = 1; pVertex[1].dwColor = 0xff00ff00;
+	pVertex[2].fX = 1; pVertex[2].fY = 1; pVertex[2].fZ = -1; pVertex[2].dwColor = 0xffffff00;
+	pVertex[3].fX = -1; pVertex[3].fY = 1; pVertex[3].fZ = -1; pVertex[3].dwColor = 0xff00ffff;
+	pVertex[4].fX = -1; pVertex[4].fY = -1; pVertex[4].fZ = 1; pVertex[4].dwColor = 0xffff00ff;
+	pVertex[5].fX = 1; pVertex[5].fY = -1; pVertex[5].fZ = 1; pVertex[5].dwColor = 0xff0000ff;
+	pVertex[6].fX = 1; pVertex[6].fY = -1; pVertex[6].fZ = -1; pVertex[6].dwColor = 0xff000000;
+	pVertex[7].fX = -1; pVertex[7].fY = -1; pVertex[7].fZ = -1; pVertex[7].dwColor = 0xffffffff;
 
 	m_pVB->Unlock();
 
+	if (FAILED(Device->CreateIndexBuffer(12 * sizeof(S_Index16), NULL, D3DFMT_INDEX16, D3DPOOL::D3DPOOL_MANAGED, &m_pIB, NULL)))
+	{
+		MsgBox(L"IndexBuffer ERR");
+		return;
+	}
+
+	S_Index16 * pIndex16 = nullptr;
+
+	m_pIB->Lock(NULL, NULL, (void**)&pIndex16, NULL);
+
+	//À­¸é
+	pIndex16[0]._0 = 0; pIndex16[0]._1 = 1; pIndex16[0]._2 = 2;
+	pIndex16[1]._0 = 0; pIndex16[1]._1 = 2; pIndex16[1]._2 = 3;
+	//¾Õ¸é
+	pIndex16[2]._0 = 3; pIndex16[2]._1 = 2; pIndex16[2]._2 = 6;
+	pIndex16[3]._0 = 3; pIndex16[3]._1 = 6; pIndex16[3]._2 = 7;
+	//¿À¸¥ÂÊ¸é
+	pIndex16[4]._0 = 2; pIndex16[4]._1 = 1; pIndex16[4]._2 = 5;
+	pIndex16[5]._0 = 2; pIndex16[5]._1 = 5; pIndex16[5]._2 = 6;
+	//¿ÞÂÊ¸é
+	pIndex16[6]._0 = 0; pIndex16[6]._1 = 3; pIndex16[6]._2 = 7;
+	pIndex16[7]._0 = 0; pIndex16[7]._1 = 7; pIndex16[7]._2 = 4;
+	//µÞ¸é
+	pIndex16[8]._0 = 1; pIndex16[8]._1 = 0; pIndex16[8]._2 = 4;
+	pIndex16[9]._0 = 1; pIndex16[9]._1 = 4; pIndex16[9]._2 = 5;
+	//¾Æ·§¸é
+	pIndex16[10]._0 = 4; pIndex16[10]._1 = 6; pIndex16[10]._2 = 5;
+	pIndex16[11]._0 = 4; pIndex16[11]._1 = 7; pIndex16[11]._2 = 6;
+
+	m_pIB->Unlock();
 }
 
 LPDIRECT3DVERTEXBUFFER9 C_Vertex::GetVB() const

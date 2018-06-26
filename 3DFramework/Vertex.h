@@ -3,6 +3,7 @@
 #include "Component.h"
 #include "Macro.h"
 #include "VertexInfo.h"
+#include "IndexInfo.h"
 
 class C_Vertex : public C_Component
 {
@@ -31,6 +32,7 @@ public:
 public:
 	void SetTest();
 	void SetTest2();
+	void SetTest3();
 
 
 public:

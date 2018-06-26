@@ -6,7 +6,10 @@ ImplementSingleton(C_SceneMgr)
 
 C_SceneMgr::C_SceneMgr(){}
 
-C_SceneMgr::~C_SceneMgr(){}
+C_SceneMgr::~C_SceneMgr()
+{
+	Release();
+}
 
 void C_SceneMgr::Update()
 {
