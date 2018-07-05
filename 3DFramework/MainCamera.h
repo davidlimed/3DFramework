@@ -6,6 +6,9 @@ class C_MainCamera
 {
 CreateBen(C_MainCamera)
 //View Matrix Element
+public:
+	enum E_STATE {eDefault};
+
 private:
 	D3DXMATRIX		m_matView;
 	D3DXVECTOR3		m_vecPos;
@@ -25,7 +28,9 @@ private:
 	float	m_fRunningTime;
 	float	m_fInterval;
 	float	m_fMovingSpeed;
+	short	m_nState;
 	bool	m_bisVibration;
+	bool	m_bisUsingMouse;
 
 public:
 	C_MainCamera();

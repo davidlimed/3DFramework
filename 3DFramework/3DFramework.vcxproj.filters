@@ -141,6 +141,9 @@
     <Filter Include="Source\06.GameObject\97.Cube">
       <UniqueIdentifier>{981a369d-f282-42db-8ead-4e2644c4fa12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\NewFilter1">
+      <UniqueIdentifier>{124e6810-2760-4f3b-b898-8fa2055ed7d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3DFramework.h">

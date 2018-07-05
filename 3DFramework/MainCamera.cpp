@@ -2,6 +2,9 @@
 #include "MainCamera.h"
 #include "TimeMgr.h"
 #include "Device.h"
+#include "Define.h"
+#include "Macro.h"
+#include "KeyMgr.h"
 
 C_MainCamera::C_MainCamera():
 	m_matProj{},
@@ -17,7 +20,9 @@ C_MainCamera::C_MainCamera():
 	m_fRunningTime(0),
 	m_fInterval(0),
 	m_bisVibration(false),
-	m_fMovingSpeed(0.f)
+	m_bisUsingMouse(false),
+	m_fMovingSpeed(0.f),
+	m_nState(0)
 {}
 
 C_MainCamera::~C_MainCamera()
@@ -78,7 +83,26 @@ void C_MainCamera::Update()
 		m_vecAt.x -= (1.f * DeltaTime);
 	}
 
+	if (KeyMgr->StayKeyDown('B'))
+	{
+		m_bisUsingMouse = !m_bisUsingMouse;
+	}
+
 	D3DXMatrixLookAtLH(&m_matView, &m_vecPos, &m_vecAt, &m_vecUp);
+
+	if (m_bisUsingMouse)
+	{
+		POINT pt = {};
+		GetCursorPos(&pt);
+		ScreenToClient(g_hWnd, &pt);
+
+		m_vecAt.x = pt.x;
+		m_vecAt.y = pt.y;
+		m_vecAt.z = 0.f;
+
+		D3DXMatrixLookAtLH(&m_matView, &m_vecPos, &m_vecAt, &m_vecUp);
+	}
+
 	D3DXMatrixPerspectiveFovLH(&m_matProj, m_fFovY, m_fAspect, m_fNear, m_fFar);
 
 	Device->SetTransform(D3DTRANSFORMSTATETYPE::D3DTS_VIEW, &m_matView);
@@ -88,26 +112,36 @@ void C_MainCamera::Update()
 void C_MainCamera::SetInterval(float Interval)
 {
 	m_fInterval = Interval;
+
+	return;
 }
 
 void C_MainCamera::SetTime(float time)
 {
 	m_fTime = time;
+
+	return;
 }
 
 void C_MainCamera::SetTarget(D3DXVECTOR3 vecTargetPos)
 {
 	m_vecAt = vecTargetPos;
+
+	return;
 }
 
 void C_MainCamera::SetPos(D3DXVECTOR3 vecEye)
 {
 	m_vecPos = vecEye;
+
+	return;
 }
 
 void C_MainCamera::SetUp(D3DXVECTOR3 vecUp)
 {
 	m_vecUp = vecUp;
+
+	return;
 }
 
 void C_MainCamera::SetViewElement(D3DXVECTOR3 Eye, D3DXVECTOR3 Up, D3DXVECTOR3 At)
@@ -158,6 +192,6 @@ void C_MainCamera::Vibration()
 		return;
 	}
 	
-	m_fRunningTime += (1.f * C_TimeMgr::GetInstance()->GetTime());
+	m_fRunningTime += (1.f * DeltaTime);
 	
 }
